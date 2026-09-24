@@ -15,7 +15,7 @@ go-to: sandbox_menu
 - @editeconomy: Edit Economy
 - @editrelations: Edit Party Relations & Coalition Dissent
 - @nat_rep_soc_support: Increase/Decrease Support for the Republic, Nationalism, and Socialism.
-- @edit_hindy_angry: Change how much is Hindenburg angry at you or Brüning.
+- @edit_hindy_angry: Change how much is Hindenburg hangry at you or Brüning.
 - @editinter: Edit International Relations
 - @editpartysupport: Edit Party Support
 - @editelectoral: Edit Electoral Threshold
@@ -508,13 +508,14 @@ on-arrival: socialism -= 15;
 - @noangry_bru: Hindenburg loves Brüning
 - @raiseangry_bru: Hindenburg is starting to get a little angry at Brüning 
 - @lowerangry_bru: Hindenburg is getting a little less angry at Brüning 
+- @returnsandbox: Return to the Sandbox 
 
 @maxangry
-go-to: sandbox_menu
+go-to: edit_hindy_angry
 on-arrival: hindenburg_angry = 120
 
 @noangry
-go-to: sandbox_menu
+go-to: edit_hindy_angry
 on-arrival: hindenburg_angry = 0
 
 @raiseangry
@@ -526,11 +527,11 @@ go-to: edit_hindy_angry
 on-arrival: hindenburg_angry -= 10
 
 @maxangry_bru
-go-to: sandbox_menu
+go-to: edit_hindy_angry
 on-arrival: hindenburg_angry_bruning = 120
 
 @noangry_bru
-go-to: sandbox_menu
+go-to: edit_hindy_angry
 on-arrival: hindenburg_angry_bruning = 0
 
 @raiseangry_bru
@@ -546,6 +547,7 @@ on-arrival: hindenburg_angry_bruning -= 10
 - @interwest: Improve Relations with the West
 - @intereast: Improve Relations with the East
 - @intersov: Improve Relations with the Soviet Union
+- @returnsandbox: Return to the Sandbox
 
 @interwest
 
