@@ -14,8 +14,8 @@ go-to: sandbox_menu
 - @editbudget: Edit Budget
 - @editeconomy: Edit Economy
 - @editrelations: Edit Party Relations & Coalition Dissent
-- @nat_rep_soc_support: Increase/Decrease Support for the Republic, Nationalism, and Socialism.
-- @edit_hindy_angry: Change how much is Hindenburg hangry at you or Brüning.
+- @nat_rep_soc_support: Edit Support for the Rep, Nat, and Soc
+- @edit_hindy_angry: Edit Hindenburg's Anger
 - @editinter: Edit International Relations
 - @editpartysupport: Edit Party Support
 - @editelectoral: Edit Electoral Threshold
