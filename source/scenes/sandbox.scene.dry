@@ -14,6 +14,9 @@ go-to: sandbox_menu
 - @editbudget: Edit Budget
 - @editeconomy: Edit Economy
 - @editrelations: Edit Party Relations & Coalition Dissent
+- @nat_rep_soc_support: Increase/Decrease Support for the Republic, Nationalism, and Socialism.
+- @edit_hindy_angry: Change how much is Hindenburg angry at you or Brüning.
+- @editinter: Edit International Relations
 - @editpartysupport: Edit Party Support
 - @editelectoral: Edit Electoral Threshold
 - @editfactions: Edit SPD Factions
@@ -460,6 +463,281 @@ Q.nsdap_relation -= 15;
 !}
 
 Decreased relations with the NSDAP.
+
+@nat_rep_soc_support
+
+- @incr_rep: Increase Support for the Republic
+- @decr_rep: Decrease Support for the Republic
+- @incr_nat: Increase Support for Nationalism
+- @decr_nat: Decrease Support for Nationalism
+- @incr_soc: Increase Support for Socialism
+- @decr_soc: Decrease Support for Socialism
+- @returnsandbox: Return to the Sandbox
+
+@incr_rep
+go-to: nat_rep_soc_support
+on-arrival: pro_republic += 15;
+
+@decr_rep
+go-to: nat_rep_soc_support
+on-arrival: pro_republic -= 15;
+
+@incr_nat
+go-to: nat_rep_soc_support
+on-arrival: nationalism += 15;
+
+@decr_nat
+go-to: nat_rep_soc_support
+on-arrival: nationalism  -= 15;
+
+@incr_soc
+go-to: nat_rep_soc_support
+on-arrival: socialism += 15;
+
+@decr_soc
+go-to: nat_rep_soc_support
+on-arrival: socialism -= 15;
+
+@edit_hindy_angry
+
+- @maxangry: Hindenburg crashes out
+- @noangry: Hindenburg loves you
+- @raiseangry: Hindenburg is starting to get a little angry at you 
+- @lowerangry: Hindenburg is getting a little less angry at yoy
+- @maxangry_bru: Hindenburg hates Brüning
+- @noangry_bru: Hindenburg loves Brüning
+- @raiseangry_bru: Hindenburg is starting to get a little angry at Brüning 
+- @lowerangry_bru: Hindenburg is getting a little less angry at Brüning 
+
+@maxangry
+go-to: sandbox_menu
+on-arrival: hindenburg_angry = 120
+
+@noangry
+go-to: sandbox_menu
+on-arrival: hindenburg_angry = 0
+
+@raiseangry
+go-to: edit_hindy_angry
+on-arrival: hindenburg_angry += 10
+
+@lowerangry
+go-to: edit_hindy_angry
+on-arrival: hindenburg_angry -= 10
+
+@maxangry_bru
+go-to: sandbox_menu
+on-arrival: hindenburg_angry_bruning = 120
+
+@noangry_bru
+go-to: sandbox_menu
+on-arrival: hindenburg_angry_bruning = 0
+
+@raiseangry_bru
+go-to: edit_hindy_angry
+on-arrival: hindenburg_angry_bruning += 10
+
+@lowerangry_bru
+go-to: edit_hindy_angry
+on-arrival: hindenburg_angry_bruning -= 10
+
+@editinter
+
+- @interwest: Improve Relations with the West
+- @intereast: Improve Relations with the East
+- @intersov: Improve Relations with the Soviet Union
+
+@interwest
+
+- @incrwest: Increase West Relations
+- @decrwest: Decrease West Relations 
+- @returnsandbox: Return to the Sandbox
+
+@incrwest
+
+- @hugewestincr: +400 West Relations
+- @bigwestincr: +100 West Relations
+- @mediumwestincr: +20 West Relations 
+- @medsmallwestincr: +10 West Relations
+- @smallwestincr: +5 West Relations
+- @returnsandbox: Return to Sandbox
+
+@hugewestincr
+on-arrival: west_relation += 400
+go-to: incrwest
+
+@bigwestincr
+on-arrival: west_relation += 100
+go-to: incrwest
+
+@mediumwestincr
+on-arrival: west_relation += 20
+go-to: incrwest
+
+@medsmallwestincr
+on-arrival: west_relation += 10
+go-to: incrwest
+
+@smallwestincr
+on-arrival: west_relation += 5
+go-to: incrwest
+
+@decrwest
+
+- @hugewestdecr: -400 West Relations 
+- @bigwestdecr: -100 West Relations
+- @mediumwestdecr: -20 West Relations
+- @medsmallwestdecr: -10 West Relations 
+- @smallwestdecr: -5 West Relations
+- @returnsandbox: Return to Sandbox
+
+@hugewestdecr
+on-arrival: west_relation -= 400
+go-to: decrwest
+
+@bigwestdecr
+on-arrival: west_relation -= 100
+go-to: decrwest
+
+@mediumwestdecr
+on-arrival: west_relation -= 20
+go-to: decrwest
+
+@medsmallwestdecr
+on-arrival: west_relation -= 10
+go-to: decrwest
+
+@smallwestdecr
+on-arrival: west_relation -= 5
+go-to: decrwest
+
+@intereast
+
+- @increast: Increase East Relations 
+- @decreast: Decrease East Relations 
+- @returnsandbox: Return to the Sandbox
+
+@increast
+
+- @hugeeastincr: +400 East Relations 
+- @bigeastincr: +100 East Relations 
+- @mediumeastincr: +20 East Relations 
+- @medsmalleastincr: +10 East Relations
+- @smalleastincr: +5 East Relations 
+- @returnsandbox: Reutrn to Sandbox
+
+@hugeeastincr
+on-arrival: east_relation += 400
+go-to: increast
+
+@bigeastincr
+on-arrival: east_relation += 100
+go-to: increast
+
+@mediumeastincr
+on-arrival: east_relation += 20
+go-to: increast
+
+@medsmalleastincr
+on-arrival: east_relation += 10
+go-to: increast
+
+@smalleastincr
+on-arrival: east_relation += 5
+go-to: increast
+
+@decreast
+
+- @hugeeastdecr: -400 East Relations 
+- @bigeastdecr: -100 East Relations 
+- @mediumeastdecr: -20 East Relations 
+- @medsmalleastdecr: -10 East Relations 
+- @smalleastdecr: -5 East Relations
+- @returnsandbox: Return to Sandbox
+
+@hugeeastdecr
+on-arrival: east_relation -= 400
+go-to: decreast
+
+@bigeastdecr
+on-arrival: east_relation -= 100
+go-to: decreast
+
+@mediumeastdecr
+on-arrival: east_relation -= 20
+go-to: decreast
+
+@medsmalleastdecr
+on-arrival: east_relation -= 10
+go-to: decreast
+
+@smalleastdecr
+on-arrival: east_relation -= 5
+go-to: decreast
+
+@intersov
+
+- @incrsov: Increase Soviet Relations 
+- @decrsov: Decrease Soviet Relations 
+- @returnsandbox: Return to the Sandbox
+
+@incrsov
+
+- @hugesovincr: +400 Soviet Relations 
+- @bigsovincr: +100 Soviet Relations 
+- @mediumsovincr: +20 Soviet Relations 
+- @medsmallsovincr: +10 Soviet Relations 
+- @smallsovincr: +5 Soviet Relations 
+- @returnsandbox: Return to Sandbox
+
+@hugesovincr
+on-arrival: soviet_relation += 400
+go-to: incrsov
+
+@bigsovincr
+on-arrival: soviet_relation += 100
+go-to: incrsov
+
+@mediumsovincr
+on-arrival: soviet_relation += 20
+go-to: incrsov
+
+@medsmallsovincr
+on-arrival: soviet_relation += 10
+go-to: incrsov
+
+@smallsovincr
+on-arrival: soviet_relation += 5
+go-to: incrsov
+
+@decrsov
+
+- @hugesovdecr: -400 Soviet Relations 
+- @bigsovdecr: -100 Soviet Relations 
+- @mediumsovdecr: -20 Soviet Relations 
+- @medsmallsovdecr: - 10 Soviet Relations
+- @smallsovdecr: -5 Soviet Relations 
+- @returnsandbox: Return to Sandbox
+
+@hugesovdecr
+on-arrival: soviet_relation -= 400
+go-to: decrsov
+
+@bigsovdecr
+on-arrival: soviet_relation -= 100
+go-to: decrsov
+
+@mediumsovdecr
+on-arrival: soviet_relation -= 20
+go-to: decrsov
+
+@medsmallsovdecr
+on-arrival: soviet_relation -= 10
+go-to: decrsov
+
+@smallsovdecr
+on-arrival: soviet_relation -= 5
+go-to: decrsov
 
 @editleft
 
